@@ -17,14 +17,26 @@ public class Sorting_Patient_Severity_Levels_in_Hospitals {
 
     }
     public static void Sort(int[] arr){
-        for (int turn = 1; turn < arr.length; turn++) {
-            for (int i = 0; i < arr.length-turn; i++) {
-                if (arr[i]>arr[i+1]){
-                    int temp=arr[i];
-                    arr[i]=arr[i+1];
-                    arr[i+1]=temp;
-                }
-            }
-        }
+       int low=0;
+       int last= arr.length-1;
+       int i=0;
+       while (i<=last){
+           if (arr[i]==0){
+               int temp=arr[i];
+               arr[i]=arr[low];
+               arr[low]=temp;
+               i++;
+               low++;
+           }
+           else if (arr[i]==2){
+               int temp=arr[i];
+               arr[i]=arr[last];
+               arr[last]=temp;
+               last--;
+           }
+           else {
+               i++;
+           }
+       }
     }
 }

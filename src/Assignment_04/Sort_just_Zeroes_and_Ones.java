@@ -16,22 +16,19 @@ public class Sort_just_Zeroes_and_Ones {
         }
     }
     public static void sort(int[] arr){
-        for (int i=0;i< arr.length;i++){
-            int idx=miniidx(arr,i);
-            int temp=arr[i];
-            arr[i]=arr[idx];
-            arr[idx]=temp;
-
-        }
-    }
-    public static int miniidx(int[] arr,int i){
-        int mini=i;
-        for (int j=i+1;j< arr.length;j++){
-            if (arr[j]<arr[mini]){
-                mini=j;
+        int i=0;
+        int j= arr.length-1;
+        while (i<=j){
+            if (arr[i]==1){
+               int temp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+               j--;
+            }
+            if (arr[i]==0){
+                i++;
             }
         }
-
-        return mini ;
     }
+
 }
